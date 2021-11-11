@@ -8,11 +8,11 @@ const PostCard = ({post}) => {
         <div className='w-full rounded-xl overflow-hidden relative h-96 '>
             <img src={post.photo.url} alt={post.title} className='w-full h-full absolute object-cover object-center' />
             <div className='w-full h-full top-0 left-0 bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm flex flex-col items-center justify-center text-white'>
-                <h1 className='text-2xl py-4'>{post.title}</h1>
+                <h1 className='text-2xl py-4 font-semibold'>{post.title}</h1>
                 <p className='text-xl px-2 py-4 text-center'>{post.shortdescription}</p>
                 <div className='justify-self-end py-4 text-white justify-center w-full flex flex-col items-center md:flex-row'>
                     <div className='px-5 pb-5 md:pb-0 flex flex-row items-center'>
-                        <img src={post.author.photo.url} height='30px' width='30px' alt='' />
+                        <img src={post.author.photo.url} height='30px' width='30px' alt='' className='rounded-full' />
                         <h1 className='px-2'>{post.author.name}</h1>
                     </div>
                     <div className='px-5 flex flex-row items-center'>
