@@ -11,11 +11,11 @@ const Comments = ({slug}) => {
     useEffect(()=>{
         getComments(slug).then(result => setComments(result))
         console.log('comments',comments);
-    },[])
+    },[slug])
 
     return (
         <div>
-            { comments.length > 0 && (
+            { comments.length > 0 ? 
                 <div className='bg-black bg-opacity-70 text-white shadow-lg rounded-lg p-8 pb-12 mb-8'>
                     <h3 className='text-xl mb-8 font-semibold border-b pb-4'>
                         {comments.length}
@@ -35,7 +35,11 @@ const Comments = ({slug}) => {
                         </div>
                     ))}
                 </div>
-            )}
+                :
+                <div className='bg-black bg-opacity-70 text-white shadow-lg rounded-lg p-8 text-center mb-8'>
+                    <h1>no comments on this post yet</h1>
+                </div>
+            }
         </div>
     )
 }
