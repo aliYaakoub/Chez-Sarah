@@ -14,7 +14,7 @@ const SimilarPosts = ({slug, category}) => {
     return (
         <div className='bg-black bg-opacity-70 text-white shadow-lg rounded-lg p-8 mb-8'>
             <h3 className='text-xl mb-8 font-semibold border-b pb-4'>
-                Similar Posts
+                You might also like
             </h3>
             {relatedPosts.map(post => (
                 <div key={post.title} className='flex items-center w-full mb-4'>
