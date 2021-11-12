@@ -2,6 +2,7 @@ import Head from 'next/head'
 import React, { useState,useEffect } from 'react'
 import { getPosts } from '../services'
 import {PostCard, Loader} from '../components';
+import FeaturedPosts from '../sections/FeaturedPosts';
 
 export default function Home() {
   
@@ -23,10 +24,13 @@ export default function Home() {
       {isLoading ? 
         <Loader />
         :
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10'>
-          {posts.map(post=>(
-            <PostCard key={post.node.title} post={post.node} />
-          ))}
+        <div>
+          <FeaturedPosts />
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10'>
+            {posts.map(post=>(
+              <PostCard key={post.node.title} post={post.node} />
+            ))}
+          </div>
         </div>
       }
     </div>
