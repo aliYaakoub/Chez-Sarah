@@ -12,7 +12,7 @@ const SimilarPosts = ({slug, category}) => {
     },[slug])
 
     return (
-        <div className='bg-black bg-opacity-70 text-white shadow-lg rounded-lg p-8 mb-8'>
+        <div className='bg-black bg-opacity-70 text-white shadow-lg rounded-lg p-8 mb-16'>
             <h3 className='text-xl mb-8 font-semibold border-b pb-4'>
                 You might also like
             </h3>
@@ -26,7 +26,7 @@ const SimilarPosts = ({slug, category}) => {
                             {moment(post.createdAt).format('MMM DD, YYYY')}
                         </p>
                         <Link href={`/post/${post.slug}`}>
-                            {post.title}
+                            <span>{post.title}</span>
                         </Link>
                     </div>
                 </div>
