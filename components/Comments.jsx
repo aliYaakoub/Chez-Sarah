@@ -10,7 +10,6 @@ const Comments = ({slug}) => {
 
     useEffect(()=>{
         getComments(slug).then(result => setComments(result))
-        console.log('comments',comments);
     },[slug])
 
     return (
