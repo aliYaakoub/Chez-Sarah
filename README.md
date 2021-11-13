@@ -1,1 +1,1 @@
-[live site](chez-sarah.netlify.app)
+[live site](https://chez-sarah.vercel.app/)
