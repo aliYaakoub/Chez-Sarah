@@ -25,7 +25,6 @@ body {
 
 .react-multi-carousel-list {
   & .arrow-btn {
-    background: rgb(209, 104, 183);
     transition: width 300ms ease;
     width: 50px;
     &:hover {
@@ -44,4 +43,9 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.contacts{
+  max-width: 500px;
+  margin: 0 auto;
 }

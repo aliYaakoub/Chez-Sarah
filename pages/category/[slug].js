@@ -1,9 +1,17 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Head from 'next/head';
 import { getCategoryPost, getCategories } from '../../services';
 import { PostCard } from '../../components'
+import { paginate } from '../../utils/paginate';
+import Pagination from '../../components/pagination'
 
 const CategoriesPosts = ({posts}) => {
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [pageSize, setPageSize] = useState(6);
+
+    const paginatedItems = paginate(posts, currentPage, pageSize);
+
     return (
         <div className="px-10 container mx-auto">
         <Head>
@@ -15,10 +23,18 @@ const CategoriesPosts = ({posts}) => {
                 <h1>No Recipes In this category yet</h1>
             </div>  
             :
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10'>
-                {posts.map(post=>(
-                    <PostCard key={post.node.title} post={post.node} />
-                    ))}
+            <div>
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10'>
+                    {paginatedItems.map(post=>(
+                        <PostCard key={post.node.title} post={post.node} />
+                        ))}
+                </div>
+                <Pagination
+                    itemsCount={posts.length}
+                    currPage={currentPage}
+                    pageSize={pageSize}
+                    onPageChange={(page)=>setCurrentPage(page)}
+                />
             </div>
         }
     </div>
