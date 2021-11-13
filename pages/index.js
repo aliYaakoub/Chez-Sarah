@@ -36,7 +36,7 @@ export default function Home() {
         <div className=''>
           {posts.length === 0 ? 
             <div className='h-screen'>
-              <h2 className='text-center w-full'>no Recipes to show yet</h2>
+              <h2 className='text-center font-medium text-2xl'>no Recipes to show yet</h2>
             </div>
             :
             <div className='min-h-screen flex flex-col'>
